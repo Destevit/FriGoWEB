@@ -54,6 +54,8 @@ export class NotifierService {
             console.log(body.ValidationResult.Errors[e].ErrorMessage);
             text += ' ' + body.ValidationResult.Errors[e].ErrorMessage;
           }
+        if(body.error_description)
+          text += ' ' + body.error_description;
       }
 
       this.add({type: 'error', text: text, fixed})
