@@ -15,6 +15,6 @@ export class NotLoggedInGuard implements CanActivate {
     const loggedin = this.userService.isLoggedIn();
     if(loggedin)
       this.router.navigate(['/fridge']);
-    return loggedin;
+    return !loggedin;
   }
 }
