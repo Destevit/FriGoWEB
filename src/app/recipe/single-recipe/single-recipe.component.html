@@ -62,7 +62,7 @@
 
       <div class="o-btn-wrapper single-recipe__btn-wrapper">
         <a class="o-btn o-btn--color" (click)="addNote()" *ngIf="loggedin">Dodaj notatkę</a>
-        <a href="" class="o-btn" [ngClass]="{'button-center': !loggedin}">Udostępnij</a>
+        <a (click)="share()" class="o-btn" [ngClass]="{'button-center': !loggedin}">Udostępnij</a>
       </div>
 
       <fg-notes [recipe]="recipe" [(notesOpen)]="notesOpen" *ngIf="loggedin"></fg-notes>

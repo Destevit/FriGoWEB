@@ -83,6 +83,10 @@ export class SingleRecipeComponent{
     )
   }
 
+  share() {
+    window.open('https://www.facebook.com/sharer.php?u='+window.location, 'Udostępnij', 'width=500,height=400,resizable=true');
+  }
+
   missing(ingredientQuantity: IngredientQuantity): number {
     return this.recipe.missingIngredientQuantities
       .filter(iq => iq.ingredient.id == ingredientQuantity.ingredient.id)
