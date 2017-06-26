@@ -20,10 +20,7 @@ export class RecipeTileComponent implements OnInit {
     return `${value}%`;
   }
 
-  get stars(): boolean[] {
-    return [
-      ...Array(this.recipe.rating).fill(true),
-      ...Array(5-this.recipe.rating).fill(false)
-    ]
+  get stars(): number[] {
+    return Recipe.getIntStars(this.recipe.rating)
   }
 }

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ExampleModule } from './example/example.module';
 import { ContactComponent } from './shared/contact/contact.component';
+import { LoggedInGuard } from './core/logged-in.guard';
 
 export const routes: Routes = [
   {
@@ -23,7 +24,8 @@ export const routes: Routes = [
   },
   {
     path: 'fridge',
-    loadChildren: './fridge/fridge.module#FridgeModule'
+    loadChildren: './fridge/fridge.module#FridgeModule',
+    canActivate: [ LoggedInGuard ]
   },
   {
     path: 'cookbook',
@@ -31,7 +33,8 @@ export const routes: Routes = [
   },
   {
     path: 'recipe',
-    loadChildren: './recipe/recipe.module#RecipeModule'
+    loadChildren: './recipe/recipe.module#RecipeModule',
+    canActivate: [ LoggedInGuard ]
   },
   {
     path: 'contact',

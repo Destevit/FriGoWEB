@@ -1,0 +1,27 @@
+<div class="comments__single-comment">
+  <div class="comments__comment-author">
+    <span>{{ comment.user.userName }}</span>
+  </div>
+  <div class="comments__content-wrapper">
+    <div class="comments__content" *ngIf="!isEditing">
+      {{comment.text}}
+    </div>
+
+    <textarea *ngIf="isEditing" [(ngModel)]="editModel" name="comment-area" id="comment-area" class="comments__comment-area"></textarea>
+
+    <div class="comments__comment-controls" *ngIf="isCommentEditable(comment)">
+      <span (click)="removeComment()" *ngIf="!isEditing">
+          <i class="fa fa-trash"></i>
+      </span>
+      <span (click)="editComment()" *ngIf="!isEditing">
+          <i class="fa fa-pencil"></i>
+      </span>
+      <span (click)="saveComment()" *ngIf="isEditing">
+          <i class="fa fa-floppy-o"></i>
+      </span>
+      <span (click)="cancelCommentEdition()" *ngIf="isEditing">
+          <i class="fa fa-ban"></i>
+      </span>
+    </div>
+  </div>
+</div>

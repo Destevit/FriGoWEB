@@ -4,7 +4,7 @@ import { IngredientQuantity } from '../../shared/models/ingredient-quantity/ingr
 import { FridgeService } from '../fridge.service';
 
 import { ProductListComponent } from './../product-list/product-list.component';
-import { AddProductComponent } from './../add-product/add-product.component';
+import { NewProductComponent } from './../new-product/new-product.component';
 
 @Component({
   selector: 'fg-fridge',
@@ -13,28 +13,18 @@ import { AddProductComponent } from './../add-product/add-product.component';
 })
 
 export class FridgeComponent implements OnInit {
-  public product: IngredientQuantity[] = [];
+  public popupVisibility = false;
 
-  
-  constructor(private router: Router,
-    private fridge: FridgeService) {}
+  constructor(private router: Router) {}
 
-  ngOnInit() {
-  this.fridge.getIngredientQuantity().subscribe(
-      product => this.product = product,
-      error => console.log(error)
-      );
+  ngOnInit() { }
+
+  togglePopupVisibility() {
+    this.popupVisibility = !this.popupVisibility;
   }
-  
-  
-  public my_Class = 'disable';
-  
-  onClick(){
-        
-        if(this.my_Class=="enable"){
-            this.my_Class='disable';
-        }else{
-            this.my_Class='enable';
-        }
-    }
+
+  propose() {
+    this.router.navigate(['/cookbook']);
+  }
+
 }

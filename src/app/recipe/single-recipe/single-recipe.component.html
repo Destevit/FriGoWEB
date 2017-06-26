@@ -1,158 +1,74 @@
-<div class="o-content-wrapper">
-    <div class="o-centered">
-        <div class="single-recipe">
-            <div class="single-recipe__head">
-                <div class="single-recipe__head__description">
-                    <h1 class="o-title o-title--underline">Nazwa przepisu</h1>
-                    <div class="single-recipe__details">
-                        <span class="single-recipe__details__rating single-recipe__details__item o-rating">
-                            <span>Ocena:</span>
-                            <ul>
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                            </ul>
-                        </span>
-                        <span class="single-recipe__details__item"><span>Czas przygotowania:</span> 10 min</span>
-                        <span class="single-recipe__details__item"><span>Procent składników:</span> ? %</span>
-                        <span class="single-recipe__details__item"><span>Porcje:</span> 4</span>
-                    </div>
-                </div>
-                <div class="o-btn-wrapper single-recipe__head__btn-wrapper">
-                    <a routerLink="/recipe/create" class="o-btn o-btn--color">Edytuj przepis</a>
-                    <a href="" class="o-btn">Idź do sklepu</a>
-                </div>
-            </div>
-
-            <div class="single-recipe__about">
-                <div class="single-recipe__ingredients">
-                    <span>Składniki</span>
-                    <ul>
-                        <li><span>Składnik 1</span>5</li>
-                        <li><span>Składnik 2</span>200g</li>
-                        <li><span>Składnik 3</span>100ml</li>
-                        <li><span>Składnik 4</span>10g</li>
-                        <li><span>Składnik 5</span>1kg</li>
-                    </ul>
-                </div>
-                <div class="single-recipe__photo">
-                    <img src="" alt="">
-                </div>
-                <div class="single-recipe__description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium aliquid asperiores assumenda autem debitis delectus deleniti dignissimos distinctio dolore dolores ducimus earum est et facilis hic, laboriosam maxime minus necessitatibus nobis perferendis quo, suscipit tempora tenetur voluptatibus! Consectetur corporis eius odio officiis porro quam recusandae soluta vel. Assumenda facere iure quaerat quasi sunt. Ad alias aperiam architecto autem blanditiis consectetur culpa, delectus dicta distinctio dolorem dolores eligendi enim error est expedita facilis fugit hic in ipsam ipsum laborum, magnam maxime mollitia neque nesciunt nisi optio perspiciatis praesentium quam quas quasi quidem repellendus rerum sapiente similique sint voluptatibus. Consequatur eligendi et exercitationem obcaecati rerum vitae. Architecto at atque consequatur cupiditate, inventore libero magnam molestias, nostrum perferendis perspiciatis possimus quos voluptatem!
-                </div>
-
-                <div class="single-recipe__rate o-rating">
-                    <span>Oceń przepis:</span>
-                    <ul>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="o-btn-wrapper single-recipe__btn-wrapper">
-                <a href="" class="o-btn o-btn--color">Dodaj notatkę</a>
-                <a href="" class="o-btn">Udostępnij</a>
-            </div>
-
-            <div class="notes dropdown">
-                <h2 class="notes__title dropdown__title" (click)="notesState()">
-                    Notatki <i class="fa fa-caret-up" [ngClass]="{'open': notesOpen }"></i>
-                </h2>
-                <div class="notes__list dropdown__list" [ngClass]="{'open': notesOpen }">
-
-                    <div class="notes__single-note">
-                        <div class="notes__note-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor error eveniet excepturi fugit ipsam iure iusto laudantium minima minus neque nesciunt numquam possimus quis sapiente tenetur, voluptatem. Dolorem odit similique velit. Aut delectus inventore laborum necessitatibus officiis, praesentium sint.</div>
-                        <div class="notes__note-controls">
-                            <span><i class="fa fa-trash"></i></span>
-                            <span><i class="fa fa-pencil"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="notes__single-note">
-                        <div class="notes__note-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in provident quos.</div>
-                        <div class="notes__note-controls">
-                            <span><i class="fa fa-trash"></i></span>
-                            <span><i class="fa fa-pencil"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="notes__single-note">
-                        <div class="notes__note-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam cumque enim eos et explicabo hic laboriosam, nostrum quo rem, soluta, vitae. Alias beatae cupiditate dicta dignissimos distinctio fugiat hic illum minima pariatur porro quam quas, quasi quibusdam repudiandae suscipit tempora voluptates. Aliquid asperiores, assumenda beatae, cum, delectus deleniti illum inventore iure laborum nulla ratione repellat repudiandae sit ut voluptates? Accusamus animi aperiam cumque cupiditate delectus ea eveniet minima, modi necessitatibus nemo officiis quasi quia tempora! Corporis fugiat minima quis temporibus voluptas. Assumenda, corporis eaque exercitationem itaque magni pariatur tempore veniam voluptate. Commodi consectetur corporis dolor dolore ducimus inventore, ipsam, magnam omnis possimus qui quis reprehenderit repudiandae, veniam! A ab asperiores culpa dicta illum in, incidunt magni odio odit quam quia quisquam sapiente suscipit tempora tempore totam ut velit voluptate!</div>
-                        <div class="notes__note-controls">
-                            <span><i class="fa fa-trash"></i></span>
-                            <span><i class="fa fa-pencil"></i></span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="comments dropdown">
-                <h2 class="comments__title dropdown__title" (click)="commentsState()">
-                    Komentarze <i class="fa fa-caret-up" [ngClass]="{'open': commentsOpen }"></i>
-                </h2>
-                <div class="comments__list dropdown__list" [ngClass]="{'open': commentsOpen }">
-
-                    <div class="comments__single-comment">
-                        <div class="comments__comment-author">
-                        <span>RyżZKurczakiem4Life</span>
-                        <div class="comments__comment-rating o-rating">
-                            <span>Ocena</span>
-                            <ul>
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                        <div class="comments__content-wrapper">
-                            <div class="comments__content">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor error eveniet excepturi fugit ipsam iure iusto laudantium minima minus neque nesciunt numquam possimus quis sapiente tenetur, voluptatem. Dolorem odit similique velit. Aut delectus inventore laborum necessitatibus officiis, praesentium sint.
-                            </div>
-                            <div class="comments__comment-controls">
-                                <span><i class="fa fa-trash"></i></span>
-                                <span><i class="fa fa-pencil"></i></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="comments__single-comment">
-                        <div class="comments__comment-author">
-                            <span>Lorem ipsum dolor.</span>
-                            <div class="comments__comment-rating o-rating">
-                                <span>Ocena</span>
-                                <ul>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="comments__content-wrapper">
-                            <div class="comments__content">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, at dignissimos, dolore ea, facere hic illum nisi perspiciatis quis quos sunt unde. Corporis, deleniti dolore dolores error est exercitationem harum illo, labore laudantium quasi, quibusdam velit voluptate? Alias consequuntur culpa earum enim eum exercitationem iure magni molestias officia officiis, provident quam repellat, sequi veniam voluptates! Adipisci alias aut deleniti deserunt distinctio dolores, excepturi exercitationem fuga ipsum itaque quasi repellat. Architecto enim id molestiae necessitatibus odio rerum sequi sit! Laboriosam molestias neque nisi placeat?
-                            </div>
-                            <div class="comments__comment-controls">
-                                <span><i class="fa fa-trash"></i></span>
-                                <span><i class="fa fa-pencil"></i></span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
+<div class="o-content-wrapper" *ngIf="recipe">
+  <div class="o-centered">
+    <div class="single-recipe">
+      <div class="single-recipe__head">
+        <div class="single-recipe__head__description">
+          <h1 class="o-title o-title--underline">{{recipe.title ? recipe.title : 'Brak danych'}}</h1>
+          <div class="single-recipe__details">
+            <span class="single-recipe__details__rating single-recipe__details__item o-rating">
+              <span>Ocena:</span>
+              <ul>
+                <li *ngFor="let star of stars">
+                  <i class="fa"
+                    [ngClass]="{
+                      'fa-star': star == 2,
+                      'fa-star-half-o': star == 1,
+                      'fa-star-o': star == 0
+                    }"></i>
+                </li>
+              </ul>
+            </span>
+            <span class="single-recipe__details__item">
+              <span>Procent składników:</span>{{ getAvailableIngredientsRatio }}
+            </span>
+          </div>
         </div>
+      </div>
+
+      <div class="single-recipe__about">
+        <div class="single-recipe__ingredients">
+          <span>Składniki</span>
+          <ul *ngIf="recipe.ingredientQuantities">
+            <li *ngFor="let ingredientQuantity of recipe.ingredientQuantities"
+              [ngClass]="{'missing': missing(ingredientQuantity) > 0}">
+              <span>{{ingredientQuantity.ingredient.name}}</span>{{ingredientQuantity.quantity}}
+              <ng-container *ngIf="missing(ingredientQuantity)">
+                [-{{missing(ingredientQuantity)}}]
+              </ng-container>
+              ({{ingredientQuantity.ingredient.unit.name}})
+            </li>
+          </ul>
+        </div>
+        <div class="single-recipe__photo">
+          <img src="{{recipe.imageUrl ? recipe.imageUrl : ''}}" alt="{{recipe.title}}">
+        </div>
+        <div class="single-recipe__description">
+           {{ recipe.description ? recipe.description : 'Brak danych' }}
+        </div>
+
+        <div class="single-recipe__rate o-rating" *ngIf="loggedin">
+          <span>Oceń przepis:</span>
+          <ul [ngClass]="{'rated': rated}">
+            <li *ngFor="let star of userRating; let i = index" aria-selected="true">
+              <i class="fa" [ngClass]="{
+                'fa-star': star == 2,
+                'fa-star-half-o': star == 1,
+                'fa-star-o': star == 0
+              }" (click)="rate(i)"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="o-btn-wrapper single-recipe__btn-wrapper">
+        <a class="o-btn o-btn--color" (click)="addNote()" *ngIf="loggedin">Dodaj notatkę</a>
+        <a (click)="share()" class="o-btn" [ngClass]="{'button-center': !loggedin}">Udostępnij</a>
+      </div>
+
+      <fg-notes [recipe]="recipe" [(notesOpen)]="notesOpen" *ngIf="loggedin"></fg-notes>
+
+      <fg-comments [recipe]="recipe"></fg-comments>
+
     </div>
+  </div>
 </div>

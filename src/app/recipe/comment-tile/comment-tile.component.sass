@@ -1,0 +1,50 @@
+@import '../../../variables.sass'
+
+.comments
+  &__single-comment
+    margin-bottom: 20px
+
+  &__comment-author
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    font-size: 18px
+
+    > span
+      font-weight: 600
+      line-height: 18px
+      margin-right: 20px
+      margin-bottom: 10px
+
+  &__comment-rating
+    margin-bottom: 10px
+
+  &__content-wrapper
+    display: flex
+    flex-direction: row
+
+    textarea
+      flex: 1
+      height: 250px
+      color: $colorAccent
+      font-family: $fontMain
+      resize: none
+      text-align: left
+      overflow-y: auto
+
+  &__content
+    text-align: justify
+    flex: 1
+
+  &__comment-controls
+    display: flex
+    flex-direction: column
+    align-items: center
+    flex: 0
+    border-left: 1px solid $colorAccent
+    margin-left: 20px
+
+    span
+      margin: 10px 20px
+      cursor: pointer
+

@@ -1,9 +1,33 @@
-<form (ngSubmit)="create()">
-  <input name="quantity" type="number" [(ngModel)]="ingredientQuantity.quantity">
-  {{getUnit()}}
-  <input name="description" type="text" [(ngModel)]="ingredientQuantity.description">
-  <select name="ingredient" [(ngModel)]="selectedIngredient">
-    <option *ngFor="let item of ingredients" [ngValue]="item">{{item.name}}</option>
-  </select>
-  <button type="submit">Wyślij</button>
-</form>
+<div class="new-product__background" [ngClass]="{'visible': visible}" (click)="backgroundClick($event)" #background>
+  <div class="new-product__popup">
+    <span class="o-title o-title--underline">Dodaj produkt</span>
+      <div class="form-row">
+        <form (ngSubmit)="create()" #newProductForm="ngForm">
+          <div class="input-row input-row--select">
+          <label for="ingredient">nazwa</label>
+            <select name="ingredient" class="new-product new-product__product-name u-mark-validation"
+              [(ngModel)]="selectedIngredient" required>
+              <option *ngFor="let item of ingredients" [ngValue]="item">{{item.name}}</option>
+            </select>
+          </div>
+          <div class="input-row">
+            <label for="quantity">ilość</label>
+            <input name="quantity" type="number"
+              class="new-product new-product__product-quantity u-mark-validation"
+              [(ngModel)]="ingredientQuantity.quantity" required>
+            <span class="unit-name" *ngIf="getUnit()">({{getUnit()}})</span>
+          </div>
+          <div class="input-row">
+            <label for="description">opis</label>
+            <input name="description" class="new-product u-mark-validation" type="text"
+              [(ngModel)]="ingredientQuantity.description" required>
+          </div>
+          <div class="o-btn-wrapper">
+            <button type="submit" class="o-btn o-btn--color"
+              [disabled]="!newProductForm.form.valid">Dodaj</button>
+            <button type="button" (click)="close()" class="o-btn">Wróć</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

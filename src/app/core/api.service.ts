@@ -65,9 +65,12 @@ export class ApiService {
         body = this.toCamel(body);
         return body;
       }).catch(error => {
+        if(error.status === 401) {
+          this.userService.unauthorized();
+        }
         let message: string = "Błąd";
         try {
-          message = error.json().error_description;
+          message = error;
         } catch(e) { }
         return Observable.throw(message);
       });
@@ -99,12 +102,21 @@ export class ApiService {
       for (let originalKey in object) {
         newKey = (originalKey.charAt(0).toLowerCase() + originalKey.slice(1) || originalKey).toString();
         objectValue = object[originalKey];
-        if(objectValue !== null && objectValue.constructor === Object) {
+        if(typeof objectValue === "object") {
           objectValue = this.toCamel(objectValue);
         }
         newObject[newKey] = objectValue;
       }
     }
     return newObject;
+  }
+
+  getUrl(endpoint: string) {
+    return [environment.apiUrl, endpoint].join('/')
+  }
+
+  getHeaders() {
+    let user = this.userService.authHeaders.toJSON();
+    return {header: 'Authorization', value: user.Authorization[0]}
   }
 }

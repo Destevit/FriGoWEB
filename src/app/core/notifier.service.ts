@@ -6,7 +6,7 @@ export class NotifierService {
     private notifications: Array<Object>;
 
     constructor() {
-        this.time = 5000;
+        this.time = 2000;
         this.notifications = [];
     }
 
@@ -45,6 +45,19 @@ export class NotifierService {
     }
 
     error(text, fixed = undefined) {
-        this.add({type: 'error', text: text, fixed})
+      if (typeof text === "object") {
+        let body = JSON.parse(text._body);
+        text = body.Message || '';
+        if(body.ValidationResult)
+          for (var e in body.ValidationResult.Errors) {
+            console.log(body.ValidationResult.Errors[e]);
+            console.log(body.ValidationResult.Errors[e].ErrorMessage);
+            text += ' ' + body.ValidationResult.Errors[e].ErrorMessage;
+          }
+        if(body.error_description)
+          text += ' ' + body.error_description;
+      }
+
+      this.add({type: 'error', text: text, fixed})
     }
 }

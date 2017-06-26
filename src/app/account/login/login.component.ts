@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AccountService } from '../account.service';
-import { UserService } from '../../core/user.service';
-import { LoginModel } from '../../shared/models/account/login.model';
-import { NotifierService } from '../../core/notifier.service';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { AccountService } from "../account.service";
+import { LoginModel } from "../../shared/models/account/login.model";
+import { NotifierService } from "../../core/notifier.service";
 
 @Component({
   selector: 'fg-login',
@@ -11,7 +10,6 @@ import { NotifierService } from '../../core/notifier.service';
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit {
-
   loginModel: LoginModel = new LoginModel();
 
   constructor(
@@ -24,6 +22,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.notifier.clearAll();
+
     this.accountService
       .login(this.loginModel)
       .subscribe(() => {

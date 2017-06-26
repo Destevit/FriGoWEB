@@ -72,7 +72,7 @@
 
   &__ingredients
     width: 100%
-    flex: 1
+    flex: 2
     margin-right: 20px
 
     > span
@@ -98,8 +98,9 @@
   &__photo
     width: 100%
     flex: 1
-    height: 200px
-    background: black
+
+    img
+      width: 100%
 
   &__description
     text-align: justify
@@ -112,96 +113,19 @@
     span
       line-height: 30px
 
+    li
+      cursor: pointer
+
+    ul
+      &.rated
+        color: $colorAccent!important
+
+
   &__btn-wrapper
     margin: 30px auto
 
+.missing
+  color: red
 
-.dropdown
-  color: $colorAccent
-
-  @media all and (max-width: 800px)
-    max-width: 500px
-    margin: 0 auto
-
-  &__title
-    margin-bottom: 15px
-    cursor: pointer
-
-    i
-      transition: transform .5s
-    i.open
-      transform-origin: 50% 50%
-      transform: rotate(180deg)
-
-  &__list
-    height: auto
-    overflow: hidden
-    max-height: 0
-    transition: max-height .5s
-
-    &.open
-      max-height: 1000px
-
-
-
-.notes
-  &__single-note
-    display: flex
-    flex-direction: row
-    margin-bottom: 20px
-
-  &__note-content
-    text-align: justify
-
-  &__note-controls
-    display: flex
-    flex-direction: row
-    align-items: center
-
-    span
-      margin: 10px 20px
-      cursor: pointer
-
-    @media all and (max-width: 450px)
-      flex-direction: column
-      justify-content: center
-
-.comments
-  &__single-comment
-    margin-bottom: 20px
-
-  &__comment-author
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    font-size: 18px
-
-    > span
-      font-weight: 600
-      line-height: 18px
-      margin-right: 20px
-      margin-bottom: 10px
-
-  &__comment-rating
-    margin-bottom: 10px
-
-  &__content-wrapper
-    display: flex
-    flex-direction: row
-
-  &__content
-    text-align: justify
-
-  &__comment-controls
-    display: flex
-    flex-direction: row
-    align-items: center
-
-    span
-      margin: 10px 20px
-      cursor: pointer
-
-    @media all and (max-width: 450px)
-      flex-direction: column
-      justify-content: center
-
+.button-center
+  margin: 0 auto

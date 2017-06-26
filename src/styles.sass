@@ -17,6 +17,7 @@ body
 
 
 .o-btn
+  font-family: $fontMain
   display: block
   padding: 16px
   background: $colorAccent
@@ -26,6 +27,15 @@ body
   text-align: center
   border-radius: 8px
   box-sizing: border-box
+  cursor: pointer
+  border: 0
+
+  &:disabled
+    opacity: 0.5
+    cursor: default
+
+    &:hover
+      background: $colorAccent
 
   &:hover
     background: rgba($colorAccent, .85)
@@ -36,6 +46,12 @@ body
     &:hover
       background: rgba($colorMain, .85)
 
+    &:disabled
+      &:hover
+        background: $colorMain
+
+  &--right
+    margin-left: auto
 
 .o-title
   display: block
@@ -91,42 +107,70 @@ body
       width: 100%
       margin: 10px 0
 
+
+.dropdown
+  color: $colorAccent
+  margin-bottom: 25px
+
+  @media all and (max-width: 800px)
+    max-width: 500px
+    margin: 0 auto
+
+  &__title
+    margin-bottom: 15px
+    cursor: pointer
+
+    i
+      transition: transform .5s
+    i.open
+      transform-origin: 50% 50%
+      transform: rotate(180deg)
+
+  &__list
+    height: auto
+    overflow: hidden
+    max-height: 0
+    transition: max-height .5s
+
+    &.open
+      max-height: 10000px
+
 .ngx-datatable.material
     -webkit-box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.07)
     -moz-box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.07)
     box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.07)
     width: 900px
     height: 300px
-    
+
     @media all and (max-width: 950px)
         width: 600px
     @media all and (max-width: 650px)
         width: 400px
     @media all and (max-width: 450px)
         width: 300px
-    
-.ngx-datatable.material .datatable-header .datatable-header-cell 
+
+.ngx-datatable.material .datatable-header .datatable-header-cell
     vertical-align: top
     font-size: 24px
-    
+
     @media all and (max-width: 650px)
         font-size: 18px
     @media all and (max-width: 450px)
         font-size: 15px
-        
+
 .ngx-datatable.material .datatable-header .datatable-header-cell:nth-child(2)
-    text-align: center;
+    text-align: center
 
 .ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell
     font-size: 20px
-    
+
     @media all and (max-width: 650px)
         font-size: 16px
     @media all and (max-width: 450px)
         font-size: 12px
-        
+
 .ngx-datatable.scroll-vertical .datatable-body .datatable-row-wrapper
-    position: absolute;
+    position: absolute
     border-top: 1px solid #b4b4ad
 
 .datatable-checkbox
@@ -150,3 +194,71 @@ body
     display: flex
     flex-direction: row
     color: $colorMain
+
+button
+  font-family: $fontMain
+  border: none
+  cursor: pointer
+
+.o-form
+  max-width: 500px
+  margin: 0 auto
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__box
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    margin-bottom: 30px
+    position: relative
+    overflow: hidden
+    padding: 5px
+
+  &__form-item
+    margin-bottom: 22px
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    width: 100%
+
+  &__label, &__input
+    min-width: 200px
+    flex: 1
+    font-size: 24px
+    color: $colorAccent
+
+  &__input
+    box-sizing: border-box;
+    font-family: $fontMain
+    font-size: 15px;
+    height: 37px;
+    line-height: 37px;
+    color: grey;
+    border: 0;
+    background: #FFF
+    padding: 5px
+    @extend  .u-mark-validation
+
+  &__label
+    margin-right: 15px
+    color: #666;
+    font-size: 18px;
+    display: inline-block;
+    line-height: 37px;
+
+  &__hiddenSubmit
+    position: absolute
+    top: -9999px
+    left: -9999px
+
+  &__text-error
+    color: red
+
+.u-mark-validation
+  &.ng-touched.ng-invalid
+    box-shadow: 0 0 5px red
+  &.ng-touched.ng-valid
+    box-shadow: 0 0 5px green
