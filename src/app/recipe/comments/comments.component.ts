@@ -32,4 +32,7 @@ export class CommentsComponent implements OnInit {
     this.recipe.comments.push(new Comment());
   }
 
+  get loggedin() {
+    return this.userService.isLoggedIn();
+  }
 }

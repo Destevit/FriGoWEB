@@ -12,6 +12,6 @@
       [isNew] = '!comment?.text?.length'
     ></fg-comment-tile>
 
-    <a class="o-btn o-btn--color" (click)="addComment()" *ngIf="userService.isLoggedIn()">Dodaj komentarz</a>
+    <a class="o-btn o-btn--color" (click)="addComment()" *ngIf="loggedin">Dodaj komentarz</a>
   </div>
 </div>
