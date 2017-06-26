@@ -13,9 +13,9 @@ import { FridgeService } from '../fridge.service';
 })
 export class EditProductComponent implements OnInit {
   ingredientQuantity: EditIngredientQuantity;
-  private ingredient: Ingredient;
-  private id: string;
-  private visible: boolean = false;
+  ingredient: Ingredient;
+  id: string;
+  visible: boolean = false;
   @ViewChild('background')
   background;
 
